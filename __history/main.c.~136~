@@ -1,0 +1,26 @@
+#include <Danduong.c>
+#include <Ultrasonic.c>
+void main()
+{
+   set_tris_b(0x00);       set_tris_c(0x00);
+   set_tris_d(0x00); 
+   
+   setup_ccp1(ccp_pwm);
+   setup_ccp2(ccp_pwm);
+   set_pwm1_duty(0);    set_pwm2_duty(0);
+   output_high(motor_en);
+   
+   setup_timer_2(t2_div_by_16,249,1);
+   setup_oscillator(OSC_8MHZ);                    // Dat dao dong trong thanh 8Mhz
+   output_a(0);   
+   delay_ms(100);
+   SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_2);      // Dinh cau hinh Timer1 de tang thêm 1 moi 1 us
+   While(true)
+   {  
+         OUTPUT_C(0x01); output_b(0x00); 
+         lcd_setup();
+         danduong();    
+   }
+ }  
+ 
+ 

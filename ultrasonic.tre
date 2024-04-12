@@ -1,0 +1,19 @@
+ÀÄultrasonic
+   ÀÄMAIN  0/198  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄget_distance  0/453  Ram=0
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@ITOF  0/29  Ram=2
+      ³  ÃÄ@DIVFF  (Inline)  Ram=14
+      ³  ÃÄ@SFTOI  (Inline)  Ram=4
+      ³  ÃÄ@ITOF  0/29  Ram=2
+      ³  ÃÄ@MULFF  (Inline)  Ram=13
+      ³  ÀÄ@ITOF  0/29  Ram=2
+      ÃÄ@FLT  0/63  Ram=10
+      ÃÄ@FLT  0/63  Ram=10
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÃÄ@FLT  0/63  Ram=10
+      ÃÄ@delay_ms1  0/20  Ram=1
+      ÀÄ@FLT  0/63  Ram=10

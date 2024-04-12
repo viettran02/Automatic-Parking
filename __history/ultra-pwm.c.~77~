@@ -1,0 +1,49 @@
+#include <16F887.h> 
+#define motor_en pin_c7
+#define echo pin_a6
+#define trigger pin_a7
+#fuses HS, NOMCLR, NOBROWNOUT, NOLVP
+#use delay(clock = 20MHz)
+
+
+void phim_up()
+{
+
+      set_pwm1_duty(200); 
+
+}
+void phim_dw()
+{ 
+   delay_ms(20); 
+   set_pwm1_duty(0);
+   set_pwm2_duty(200); 
+   delay_ms(30); 
+  
+}
+void stop()
+{
+   set_pwm1_duty(0); 
+   set_pwm2_duty(0);
+}
+void main()
+{
+   set_tris_c(0x00);
+   set_tris_d(0x00);
+   setup_ccp1(ccp_pwm);
+   setup_ccp2(ccp_pwm);
+   setup_timer_2(t2_div_by_16,249,1);
+   set_pwm1_duty(0);    set_pwm2_duty(0);
+   output_high(motor_en);
+   delay_ms(100);
+   SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_4);      // Dinh cau hinh Timer1 de tang thêm 1 moi 1 us
+   while(TRUE)
+  {
+       // Gui x
+                 phim_up();
+                 delay_ms(1000);
+                 stop();
+       }
+     delay_ms(100);
+  }
+}
+

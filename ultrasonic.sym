@@ -1,0 +1,91 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-023 distance
+024-027 time
+028-02B f
+02C-02D xung
+02E     @TRIS_C
+02F-030 @ITOF.P1
+02F-032 @SFTOI.P2
+02F-032 @FLT.P3
+02F-032 @MULFF.P4
+02F-032 @DIVFF.P5
+02F     @delay_ms1.P6
+033-036 @MULFF.P1
+033-036 @DIVFF.P2
+033-036 @FLT.P3
+037     @DIVFF.@SCRATCH1
+037     @MULFF.@SCRATCH1
+037     @FLT.@SCRATCH1
+038     @DIVFF.@SCRATCH2
+038     @MULFF.@SCRATCH2
+038     @FLT.@SCRATCH2
+039     @DIVFF.@SCRATCH3
+039     @MULFF.@SCRATCH3
+03A     @DIVFF.@SCRATCH4
+03A     @MULFF.@SCRATCH4
+03B     @DIVFF.@SCRATCH5
+03B     @MULFF.@SCRATCH5
+03C     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @delay_ms1
+000018  @ITOF
+000035  get_distance
+00006E  @DIVFF
+00013F  @SFTOI
+000176  @MULFF
+0001FA  @FLT
+000239  MAIN
+000239  @cinit1
+00024D  @cinit2
+
+Project Directory:
+    C:\Users\Fee\OneDrive\Máy tính\VXL\
+
+Project Files:
+    ultrasonic.c                                            [13-Jun-22 16:54  CRC=ADAD6FC2]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [21-Jan-21 11:32  CRC=461DBE83]
+
+Source signature=39E8ECC8
+Program memory checksum=0000
+Hex file CRC=6403
+
+Units:
+    C:\Users\Fee\OneDrive\Máy tính\VXL\ultrasonic (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   ultrasonic.xsym
+    Errors:      ultrasonic.err
+    Ext Symbols: ultrasonic.esym
+    INHX8:       ultrasonic.hex
+    Symbols:     ultrasonic.sym
+    List:        ultrasonic.lst
+    Debug/COFF:  ultrasonic.cof
+    Project:     ultrasonic.ccspjt
+    Call Tree:   ultrasonic.tre
+    Statistics:  ultrasonic.STA

@@ -1,0 +1,74 @@
+[PROJECT]
+Target=ultra-pwm.hex
+Processor_Text=PIC16F887
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=ultra-pwm.c
+[ultra-pwm.c]
+Type=4
+[mru-list]
+1=ultra-pwm.c
+
+[defines]
+buildcount=60
+
+[ProjectLog]
+Days=3
+D1=11-06-2022
+D1_L=6
+D1_L1=[81459]Stopped Editing.
+TotalEdit=177
+TotalDebug=0
+D1_E=35
+D1_D=0
+D1_L2=[81459]Project Closed.
+D1_L3=[81569]Project Opened.
+D1_L4=[81599]Started Editing.
+D1_L5=[82856]Stopped Editing.
+D1_L6=[82856]Project Closed.
+D2=12-06-2022
+D2_L=7
+D2_L1=[77951]Project Opened.
+D2_L2=[78055]Started Editing.
+D2_L3=[81380]Stopped Editing.
+D2_L4=[81524]Started Editing.
+D2_L5=[82997]Stopped Editing.
+D2_L6=[83220]Started Editing.
+D2_L7=[85943]Stopped Editing.
+D3=13-06-2022
+D3_E=142
+D3_D=0
+D3_L=19
+D3_L1=[157]Project Closed.
+D3_L2=[37913]Project Opened.
+D3_L3=[38217]Started Editing.
+D3_L4=[38240]Stopped Editing.
+D3_L5=[38240]Project Closed.
+D3_L6=[43317]Project Opened.
+D3_L7=[43325]Started Editing.
+D3_L8=[44466]Stopped Editing.
+D3_L9=[45168]Started Editing.
+D3_L10=[46071]Stopped Editing.
+D3_L11=[46071]Project Closed.
+D3_L12=[64588]Project Opened.
+D3_L13=[64595]Started Editing.
+D3_L14=[64857]Project Opened.
+D3_L15=[64868]Started Editing.
+D3_L16=[65038]Stopped Editing.
+D3_L17=[65464]Stopped Editing.
+D3_L18=[65705]Started Editing.
+D3_L19=[66022]Stopped Editing.
+
+[fileformats]
+forcecoff=0
+
+[Opened Files]
+1=ultra-pwm.c
+t1=17
+Count=1
+2=..\hc_sr05\cam_bien.X\newmain.c
+t2=109
+[Units]
+Count=1
+1=ultra-pwm (main)

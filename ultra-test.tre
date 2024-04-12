@@ -1,0 +1,10 @@
+ÀÄultra-test
+   ÀÄMAIN  0/67  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
+      ÃÄtrigger_pulse  0/16  Ram=0
+      ÃÄget_distance  0/415  Ram=0
+      ³  ÃÄ@ITOF  (Inline)  Ram=2
+      ³  ÃÄ@MULFF  (Inline)  Ram=13
+      ³  ÀÄ@DIVFF  (Inline)  Ram=14
+      ÀÄ@SFTOI  0/33  Ram=4

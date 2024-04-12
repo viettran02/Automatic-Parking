@@ -1,0 +1,22 @@
+#INCLUDE <16F887.H>
+#DEVICE ADC=10
+#FUSES NOWDT, NOMCLR, NOBROWNOUT, PUT, HS, NOPROTECT, NOLVP
+#use delay(clock = 8MHz)
+#define motor_en pin_c7
+#define sl1 pin_a0
+#define sl2 pin_a1
+#define sl3 pin_a2
+#define sl4 pin_a3
+#include<tv_lcd.c>
+#include <Danduong.c>
+void main()
+{
+   While(true)
+   {  
+         OUTPUT_C(0x01); output_b(0x00); 
+         lcd_setup();
+         danduong();    
+   }
+ }  
+ 
+ 

@@ -1,0 +1,81 @@
+
+ROM used:   1508/8192 (18%)
+            1508/8192 (18%) including unused fragments
+
+            1.4 Average locations per line
+            7.2 Average locations per statement
+
+RAM used:   21/368 (6%) at main() level
+            34/368 (9%) worst case
+
+Stack used: 4 worst case (4 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   60    79  38  main.c
+  809     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+   43    21  10  tv_lcd.c
+   74    70  33  Danduong.c
+   66    39  19  ultra-pwm.c
+----- -----
+ 1052   209 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     20   1    1             @delay_ms1
+0     24   2    1    125  1.3  LCD_COMMAND
+0     24   2    1    125  1.3  LCD_DATA
+0     33   2    0    172  1.4  LCD_SETUP
+0    173  11    0    468  3.2  checknhietdo
+0     29   2    2    791  5.3  @ITOF
+0    202  13   14    821  5.3  @DIVFF
+ Inline         4    158  3.5  @SFTOI
+0      6   0    0             @const722
+0     86   6    4             @PSTRINGC7_709
+0      7   0    0             @const727
+0     59   4    1    245  1.3  slot1
+0      6   0    0             @const729
+0      8   1    0             @const730
+0     52   3    0    221  1.3  slot2
+0      6   0    0             @const732
+0      8   1    0             @const733
+0     48   3    0    197  1.3  slot3
+0      6   0    0             @const735
+0      8   1    0             @const736
+0     46   3    0    174  1.3  slot4
+0      6   0    0             @const738
+0      8   1    0             @const739
+0     37   2    0    130  1.2  full
+0      5   0    0             @const741
+0      7   0    0             @const742
+0      4   0    0     16  0.3  free
+ Inline         0    307  4.0  get_distance
+ Inline        13             @MULFF
+0    338  22    0    587  4.8  ultra
+0     63   4   10             @FLT
+0    185  12    1   1860  2.9  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               16
+    Statements              209
+    Comments                164
+    Volume (V)              10452
+    Difficulty (D)          39.6
+    Effort to implement (E) 413542
+    Time to implement (T)   6 hours, 23 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   11
+    Maintainability (MI)    47
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1504  540  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

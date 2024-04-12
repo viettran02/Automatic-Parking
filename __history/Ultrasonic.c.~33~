@@ -1,0 +1,37 @@
+#define echo PIN_A6
+#define trig PIN_A7
+
+int16 i, distance;
+
+int16 get()    //nhan vao xung tu echo
+   {
+     i = 0;
+     set_timer1(0);
+     i = get_timer1();
+     return i;
+   }
+
+void trigger()
+{
+   output_high(trig);
+   delay_us(10);
+   output_low(trig);
+}
+
+void check_xe()
+{
+   SET_TRIS_C(0x00);
+   SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_4);  // 1 chu ky xung = 0.8us (20Mhz/4 = 5Mhz -> 1/5Mhz = 0.2us -> 0.2us*4 = 0.8)
+   set_timer1(0);
+   trigger();
+   while(!input(echo))
+      distance = get(); 
+    if(distance <= 464)// (464us / 58 = 8cm)
+     {
+       output_c(0x01); delay_ms(1000);
+     }
+    else 
+     {
+     output_c(0x00); delay_ms(1000);
+     }
+   }   

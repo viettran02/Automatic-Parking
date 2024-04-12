@@ -1,0 +1,55 @@
+#include <16f887.h>
+#fuses HS, NOMCLR, NOBROWNOUT, NOLVP
+#use delay(clock = 20MHz)
+#define trigger pin_a7
+#define echo pin_a6
+#define motor_en pin_c7
+float kcs;
+int dist;
+
+void tao_xung_trigger()
+{ 
+delay_us(100);
+output_high(trigger); 
+delay_us(100); 
+output_low(trigger);
+}
+
+void cals()
+{
+set_timer1(0);
+while(input(echo)); 
+setup_timer_1(t1_internal|t1_div_by_4); 
+ 
+while(!(input(echo))); 
+kcs = get_timer1();
+setup_timer_1(t1_disabled ); 
+}
+
+void check_xe()
+{
+if(dist<10)
+{
+   output_high(pin_c0);
+}
+else if(dist>10)
+{
+   output_low(pin_c0);
+}
+}
+
+void main()
+{ 
+set_tris_c(0x00);
+setup_timer_1(t1_disabled );
+while(true)
+{ 
+tao_xung_trigger(); 
+cals();
+ kcs=kcs*0.8;
+ kcs = (kcs/58); 
+ delay_ms(500);
+ dist = (unsigned int8)kcs;
+ check_xe();
+ }
+}

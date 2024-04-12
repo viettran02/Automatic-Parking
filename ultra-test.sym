@@ -1,0 +1,85 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-023 distance
+024-027 time
+028-029 xung
+02A-02B KQ
+02C     @TRIS_C
+02D-02E @ITOF.P1
+02D-030 @MULFF.P2
+02D-030 @DIVFF.P3
+02D-030 @SFTOI.P4
+031-034 @MULFF.P1
+031-034 @DIVFF.P2
+035     @MULFF.@SCRATCH1
+035     @DIVFF.@SCRATCH1
+036     @MULFF.@SCRATCH2
+036     @DIVFF.@SCRATCH2
+037     @MULFF.@SCRATCH3
+037     @DIVFF.@SCRATCH3
+038     @MULFF.@SCRATCH4
+038     @DIVFF.@SCRATCH4
+039     @MULFF.@SCRATCH5
+039     @DIVFF.@SCRATCH5
+03A     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  trigger_pulse
+000014  get_distance
+000029  @ITOF
+000055  @MULFF
+0000DF  @DIVFF
+0001B3  @SFTOI
+0001D4  MAIN
+0001D4  @cinit1
+0001E8  @cinit2
+
+Project Directory:
+    C:\Users\Fee\OneDrive\Máy tính\VXL\
+
+Project Files:
+    ultra-test.c                                            [13-Jun-22 16:26  CRC=FD9933FE]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [21-Jan-21 11:32  CRC=461DBE83]
+
+Source signature=89D4B104
+Program memory checksum=0000
+Hex file CRC=D638
+
+Units:
+    C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-test (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   ultra-test.xsym
+    Errors:      ultra-test.err
+    Ext Symbols: ultra-test.esym
+    INHX8:       ultra-test.hex
+    Symbols:     ultra-test.sym
+    List:        ultra-test.lst
+    Debug/COFF:  ultra-test.cof
+    Project:     ultra-test.ccspjt
+    Call Tree:   ultra-test.tre
+    Statistics:  ultra-test.STA

@@ -1,0 +1,12 @@
+D G "led" 0 5 "pin_c0"
+D G "__PCM__" 0 9 ""5.101""
+D G "__DEVICE__" 0 9 ""
+D G "__DATE__" 0 9 ""13-Jun-22""
+D G "__TIME__" 0 9 ""18:15:25""
+D G "_UNICODE" 0 9 ""?""
+D G "__EVAL" 0 9 ""?""
+D G "motor_en" 0 2 "pin_c7"
+D G "echo" 0 3 "pin_c3"
+D G "trigger" 0 4 "pin_c4"
+D G "led" 0 5 "pin_c0"
+V G "distance" 0 8 "float" `35 

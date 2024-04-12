@@ -1,0 +1,49 @@
+[PROJECT]
+Target=ultrasonic.hex
+Processor_Text=PIC16F887
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=ultrasonic.c
+[ultrasonic.c]
+Type=4
+[mru-list]
+1=ultrasonic.c
+
+[defines]
+buildcount=4
+
+[Opened Files]
+1=ultra-test.c
+t1=1
+2=..\..\..\Downloads\kethoplai - Copy.c
+t2=17
+3=..\..\..\Downloads\kethoplai.c
+t3=18
+4=ultrasonic.c
+t4=18
+Count=5
+5=main.c
+t5=1
+
+[ProjectLog]
+Days=1
+D1=13-06-2022
+D1_L=7
+D1_L1=[60113]Project Closed.
+D1_L2=[60540]Project Opened.
+D1_L3=[60630]Project Closed.
+D1_L4=[60860]Project Opened.
+D1_L5=[60867]Started Editing.
+D1_L6=[60927]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L7=[60927]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=ultrasonic (main)

@@ -1,0 +1,51 @@
+#include <16F887.h>
+#FUSES NOWDT, PUT, HS, NOPROTECT, NOLVP
+#USE DELAY(CLOCK=20M)
+#use fast_io(B)
+
+int16 i, distance;
+int1 wait_sensor()   //Cho` tin hieu tu cam bien
+   {
+     i = 0;
+     set_timer1(3036);                                 // Dung Timer1 de do do rong xung
+     while(!input(PIN_A6) && (i < 1000))
+       i = get_timer1();                            // Doc Timer1 va luu gia tri trong i
+     if(i > 990)      //Thoi gian cho`, vuot qua 990us khong do tiep wait_sensor ve 0
+       return 0;
+     else
+       return 1;
+   }
+int16 get_distance()    //nhan vao khoang cach tra ve va do do rong tu echo
+   {
+     i = 0;
+     set_timer1(3036);
+     while(input(PIN_A6) && (i < 25000))
+       i = get_timer1();
+     return i;
+   }
+void main()          //Chuong trinh chinh
+{
+  SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_2);      // Dinh cau hinh Timer1 de tang thêm 1 moi 1 us
+  while(TRUE)
+  {
+       // Gui xung 10us den chân Trig HC-SR04
+       output_high(PIN_A1);
+       delay_us(10);
+       output_low(PIN_A1);
+       // Doc xung tu chan Echo
+       if(wait_sensor())   //Neu wait sensor = 1
+       {
+            distance = get_distance(); //do do rong xung tu chan echo
+            //if(distance > 290)   
+// Khoang cach toi da 5cm (290us)
+                 //output_c(0);
+            //else 
+              // {
+                // output_c(1);
+                 //distance = (i/58)+1;                         
+//Nay tao tinh khoang cach (cm) neu muon thi bo vao LCD :))
+               //}
+       }
+     delay_ms(100);
+  }
+}

@@ -1,0 +1,35 @@
+#INCLUDE<16F887.h>
+#USE DELAY(CRYSTAL=20M)
+#DEFINE TRIGGER PIN_A7
+#DEFINE ECHO PIN_A6
+#FUSES HS
+
+float thoigian1,khoangcach1 ;
+int16 soxung1,kc1;
+
+
+void truoc()
+{
+      output_high(trigger);
+      delay_us(20);
+      output_low(trigger);
+      set_timer1(0);
+      WHILE(!(input(echo)));
+      SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_4);
+      WHILE(input(echo));
+      soxung1=get_timer1();
+      SETUP_TIMER_1(T1_DISABLED);
+      thoigian1=soxung1*0.2*4;
+      khoangcach1=((thoigian1)/58);
+      kc1=(UNSIGNED)khoangcach1;
+}
+void main()
+{
+while(true)
+{
+delay_ms(10);
+    truoc();
+    if (kc1>20)
+    {output_high(pin_c0);}
+    else {output_low(pin_c0);}
+}}

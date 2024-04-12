@@ -1,0 +1,21 @@
+#INCLUDE <16F887.H>
+#DEVICE ADC=10
+#FUSES NOWDT, PUT, HS, NOPROTECT, NOLVP
+#USE DELAY(CLOCK=20M)
+UNSIGNED INT16 KQADC;
+
+VOID nhietdo()
+{ 
+    SETUP_ADC(ADC_CLOCK_DIV_8);
+    SETUP_ADC_PORTS(SAN4); 
+    WHILE(TRUE)
+    {   
+                SET_ADC_CHANNEL(0);
+                DELAY_MS(1);
+                KQADC=0;
+                KQADC=KQADC+READ_ADC();
+                DELAY_MS(1);
+                KQADC= KQADC /2.046;
+                If (KQADC > 50) {output_high(pin_c1); delay_ms(50);}
+                
+    } }  

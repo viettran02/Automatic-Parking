@@ -1,0 +1,19 @@
+#include <Danduong.c>
+#include <Ultrasonic.c>
+void main()
+{
+   While(true)
+   {  
+         output_c(0x00);
+         SET_ADC_CHANNEL(4); delay_ms(10);
+         KQADC=READ_ADC();
+         DELAY_MS(10);
+         KQADC= KQADC /2.046;
+         delay_ms(100);
+         OUTPUT_C(0x01); output_b(0x00); 
+         lcd_setup();
+         danduong();                         
+   }
+ }  
+ 
+ 

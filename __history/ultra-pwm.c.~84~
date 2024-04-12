@@ -1,0 +1,26 @@
+#include <16F887.h>
+#FUSES NOWDT, PUT, HS, NOPROTECT, NOLVP
+#USE DELAY(CLOCK=20M)
+#define motor_en pin_c7
+#define trigger pin_a7
+#define echo pin_a6
+
+void Trigger_Pulse()
+{
+    output_high(trigger);
+    delay_us(10);
+    output_low(trigger);
+}
+
+void main()          //Chuong trinh chinh
+{
+    float Distance;
+    int Time;
+    int Total_distance[10];
+    output_low(trigger);
+/* Enable 16-bit TMR1 Register,No prescale, internal clock, Timer OFF */    
+    T1CON = 0x80;
+    TMR1IF = 0;         /* Make Timer1 Overflow Flag to '0' */
+    TMR1=0;         /* Load Timer1 with 0 */
+
+}

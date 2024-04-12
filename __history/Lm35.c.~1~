@@ -1,0 +1,50 @@
+#INCLUDE <16F887.H>
+#DEVICE ADC=10
+#FUSES NOWDT, PUT, HS, NOPROTECT, NOLVP
+#USE DELAY(CLOCK=20M)
+#DEFINE LCD_ENABLE_PIN  PIN_E2
+#DEFINE LCD_RS_PIN      PIN_E0
+#DEFINE LCD_RW_PIN      PIN_E1
+#DEFINE LCD_DATA4       PIN_D4
+#DEFINE LCD_DATA5       PIN_D5
+#DEFINE LCD_DATA6       PIN_D6
+#DEFINE LCD_DATA7       PIN_D7
+#INCLUDE <LCD.C>
+UNSIGNED INT16 KQADC, dem;
+
+VOID MAIN()
+{ 
+    dem=0;
+    LCD_INIT();
+    OUTPUT_D(0xFF); 
+    OUTPUT_C(0xFF);
+    OUTPUT_B(0xFF);
+    SET_TRIS_D(0x00); 
+    SET_TRIS_C(0x00); SET_TRIS_A(0xFF);
+    SETUP_ADC(ADC_CLOCK_DIV_8);
+    SETUP_ADC_PORTS(SAN0); 
+    WHILE(TRUE)
+    {   
+                SET_ADC_CHANNEL(0);
+                DELAY_MS(1);
+                KQADC=0;
+                KQADC=KQADC+READ_ADC();
+                DELAY_MS(1);
+                KQADC= KQADC /2.046;
+                LCD_GOTOXY(1,1);     LCD_PUTC("Nhiet do:");
+                LCD_GOTOXY(14,1);  DELAY_US(10);
+                LCD_PUTC((KQADC/100)+0x30);
+                LCD_PUTC((KQADC/10%10)+0x30);
+                LCD_PUTC((KQADC%10)+0x30);       
+                
+    
+                if (!input(pin_a1))
+                dem++;
+
+                LCD_GOTOXY(1,2);    LCD_PUTC("So SP:");
+                LCD_GOTOXY(14,2);  delay_ms(200); //thoi gian de nut nhan nha ra
+                LCD_PUTC((dem/100)+0x30);
+                LCD_PUTC((dem/10%10)+0x30);
+                LCD_PUTC((dem%10)+0x30);  
+                
+    } }  

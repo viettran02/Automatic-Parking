@@ -1,0 +1,155 @@
+UNSIGNED INT16 KQADC=0;
+
+signed int16 i, distance;
+
+int1 wait_sensor()   //Cho` tin hieu tu cam bien
+   {
+     i = 0;
+     set_timer1(0);                                 // Dung Timer1 de do do rong xung
+     while(!input(PIN_A6) && (i < 1000))
+       i = get_timer1();                            // Doc Timer1 va luu gia tri trong i
+     if(i > 990)      //Thoi gian cho`, vuot qua 990us khong do tiep wait_sensor ve 0
+       return 0;
+     else
+       return 1;
+   }
+int16 get_distance()    //nhan vao khoang cach tra ve va do do rong tu echo
+   {
+     i = 0;
+     set_timer1(0);
+     while(input(PIN_A6) && (i < 25000))
+       i = get_timer1();
+     return i;
+     delay_ms(5000);
+   }
+   
+void open()
+{
+   if (distance < 290)
+   {
+      set_pwm1_duty(200); 
+      delay_ms(30);
+   }
+}
+void close()
+{ 
+   delay_ms(20); 
+   set_pwm1_duty(0);
+   if (distance > 290)
+   {
+   set_pwm2_duty(200); 
+   delay_ms(30); 
+   }
+}
+void stop()
+{
+   set_pwm1_duty(0); 
+   set_pwm2_duty(0);
+}
+
+void check_xe()
+  {
+
+
+       output_a(0);   
+       delay_ms(100);
+       SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_2);      // Dinh cau hinh Timer1 de tang thêm 1 moi 1 us
+       // Gui xung 100ms den chân Trig HC-SR04
+       output_high(PIN_A7);
+       delay_ms(100);
+       output_low(PIN_A7);
+       // Doc xung tu chan Echo
+       if(wait_sensor())   //Neu wait sensor = 1
+       {
+            distance = get_distance(); //do do rong xung tu chan echo
+            if(distance < 290){   
+// Khoang cach toi da 5cm (290us)
+                 output_high(pin_a0);
+                 open();
+                 delay_ms(200);
+                 stop();
+                 }
+ 
+            else if(distance > 290)
+               {
+                 close();
+                 delay_ms(200);
+                 stop();                
+            }
+  
+       }
+  }
+
+
+
+void checknhietdo()
+{      
+    SETUP_ADC(ADC_CLOCK_DIV_32);
+    SETUP_ADC_PORTS(SAN4);
+         output_c(0x01);
+         SET_ADC_CHANNEL(4); delay_ms(10);
+         KQADC=READ_ADC();
+         DELAY_MS(10);
+         KQADC= KQADC /2.046;
+      //   delay_ms(100);
+    If(KQADC >= 50)
+        {OUTPUT_C(0x01); DELAY_MS(200);
+        OUTPUT_C(0x00); OUTPUT_B(0x00); 
+        lcd_command(0x80); delay_us(10); lcd_data("!CanhBao!  "); 
+        lcd_command(0xc0); delay_us(10); lcd_data("!!!!!!!!!!!!!");
+        }}
+
+void slot1()
+   {
+   lcd_command(0x80);delay_us(10);
+   lcd_data("Welcome!  ");
+   lcd_command(0xc0);delay_us(10);
+   lcd_data("----> Slot1    ");  
+      
+   output_b(0x0f); output_low(pin_b1); output_low(pin_b2); output_low(pin_b3); output_high(pin_b4); delay_ms(1000);
+   //dan duong vao slot1
+   }
+void slot2()
+   { 
+   lcd_command(0x80);delay_us(10);
+   lcd_data("Welcome!  ");
+   lcd_command(0xc0);delay_us(10);
+   lcd_data("----> Slot2   "); 
+   output_low(pin_b4); output_b(0x0f); output_low(pin_b2); output_low(pin_b3); output_high(pin_b5); delay_ms(50);
+   //dan duong vao slot 2 , slot da su dung: slot 1
+   }  
+void slot3()
+   { 
+   lcd_command(0x80);delay_us(10);
+   lcd_data("Welcome!  ");
+   lcd_command(0xc0);delay_us(10);
+   lcd_data("----> Slot3   "); 
+   output_low(pin_b5); output_b(0x0f); output_low(pin_b3); output_high(pin_b6); delay_ms(50);
+   //khi slot1 va slot2 co xe -> dan duong vao slot3   
+   }  
+void slot4()
+   { 
+   lcd_command(0x80);delay_us(10);
+   lcd_data("Welcome!  ");
+   lcd_command(0xc0);delay_us(10);
+   lcd_data("----> Slot4    "); 
+   output_low(pin_b6); output_b(0x0f); output_high(pin_b7); delay_ms(50);
+   //khi slot1 slot2 slot3 co xe --> dan duong vao slot 4
+   }  
+
+void full()
+   {
+    lcd_command(0x80);delay_us(10);
+   lcd_data("Sorry!   ");
+    lcd_command(0xc0);delay_us(10);
+    lcd_data("No slot!     "); 
+    output_b(0x00); delay_ms(100);
+   }
+
+void free()
+   {
+   slot1();   
+   }
+
+
+   

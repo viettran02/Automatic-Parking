@@ -1,0 +1,46 @@
+#define echo PIN_A6
+#define trig PIN_A7
+
+int16 i, distance;
+
+int1 cho_tin_hieu()   //Cho tin hieu tu cam bien
+   {
+     i = 0;
+     set_timer1(0);                          
+     while(!input(echo))
+       i = get_timer1();                            // luu gia tri timer1
+     if(i > 10)      //Thoi gian cho > 1ms -> khong do tiep
+       return 0;
+     else
+       return 1;
+   }
+
+int16 get()    //nhan vao xung tu echo
+   {
+     i = 0;
+     set_timer1(0);
+     i = get_timer1();
+     return i;
+   }
+
+void trigger()
+{
+   output_high(trig);
+   delay_us(10);
+   output_low(trig);
+}
+
+void check_xe()
+{
+   SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_4);  // 1 chu ky xung = 0.8us (20Mhz/4 = 5Mhz -> 1/5Mhz = 0.2us -> 0.2us*4 = 0.8)
+   set_timer1(0);
+   trigger();
+   if (cho_tin_hieu()==1)
+   {
+      distance = get(); 
+      if(distance <= 464)// (464us / 58 = 8cm)
+       {
+       output_c(0x01); delay_ms(1000);
+       }
+   }   
+}

@@ -1,0 +1,127 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-021 KQADC
+022     @TRIS_C
+023-024 @sprintf_string
+025-028 distance
+029-02C time
+02D-02E xung
+02F-032 @DIVFF.P1
+02F-032 @SFTOI.P2
+02F-032 @MULFF.P3
+02F-032 @FLT.P4
+02F-030 @ITOF.P5
+02F     LCD_COMMAND.MDK
+02F     @PSTRINGC7_709.@SCRATCH1
+02F     slot1.@SCRATCH1
+02F     MAIN.@SCRATCH1
+030     @PSTRINGC7_709.@SCRATCH2
+031     @PSTRINGC7_709.@SCRATCH3
+032     LCD_DATA.MHT
+032     @PSTRINGC7_709.@SCRATCH4
+033-036 @FLT.P1
+033     @delay_ms1.P2
+033-036 @DIVFF.P3
+033-036 @MULFF.P4
+037     @DIVFF.@SCRATCH1
+037     @MULFF.@SCRATCH1
+037     @FLT.@SCRATCH1
+038     @DIVFF.@SCRATCH2
+038     @MULFF.@SCRATCH2
+038     @FLT.@SCRATCH2
+039     @DIVFF.@SCRATCH3
+039     @MULFF.@SCRATCH3
+03A     @DIVFF.@SCRATCH4
+03A     @MULFF.@SCRATCH4
+03B     @DIVFF.@SCRATCH5
+03B     @MULFF.@SCRATCH5
+03C     @DIVFF.@SCRATCH6
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const722.call
+00000A  @const727.call
+000011  @const729.call
+000017  @const730.call
+00001F  @const732.call
+000025  @const733.call
+00002D  @const735.call
+000033  @const736.call
+00003B  @const738.call
+000041  @const739.call
+000049  @const741.call
+00004E  @const742.call
+000055  @delay_ms1
+000069  LCD_COMMAND
+000081  LCD_SETUP
+0000A2  @ITOF
+0000BF  @DIVFF
+000189  LCD_DATA
+0001A1  @PSTRINGC7_709
+0001F7  checknhietdo
+000248  @SFTOI
+0002A4  slot1
+0002DF  free
+0002E3  @FLT
+000322  ultra
+000357  get_distance
+00039D  @MULFF
+000474  slot2
+0004A8  slot3
+0004D8  slot4
+000506  full
+00052B  MAIN
+00052B  @cinit1
+000543  @cinit2
+
+Project Directory:
+    C:\Users\Fee\OneDrive\Máy tính\VXL\
+
+Project Files:
+    main.c                                                  [13-Jun-22 17:59  CRC=18B40A0C]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h [21-Jan-21 11:32  CRC=461DBE83]
+    tv_lcd.c                                                [22-Apr-22 08:42  CRC=92D067CF]
+    Danduong.c                                              [13-Jun-22 17:02  CRC=99E7E961]
+    ultra-pwm.c                                             [13-Jun-22 18:15  CRC=B5E400B7]
+
+Source signature=F7521B2D
+Program memory checksum=0000
+Hex file CRC=B41C
+
+Units:
+    C:\Users\Fee\OneDrive\Máy tính\VXL\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

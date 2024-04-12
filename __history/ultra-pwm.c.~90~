@@ -1,0 +1,79 @@
+#include <16F887.h>
+#FUSES NOWDT, PUT, HS, NOPROTECT, NOLVP
+#USE DELAY(CLOCK=20M)
+#define motor_en pin_c7
+#define trigger pin_a7
+#define echo pin_a6
+
+int16 i, distance;
+
+/*
+
+20/4 -> 5M  => 1s dem 5 triêu lan
+
+=> 1us thi` TMR1 demm 5 lan (Prescaler = 1).
+
+=> TMR1 / 5 = t (us).
+
+d = t / 58 
+=> d = TMR1 / 290. nghia la TMR1 dem 290 lan = 1 cm
+
+*/
+
+
+int1 wait_sensor()   //Cho` tin hieu tu cam bien
+   {
+     i = 0;
+     set_timer1(0);                                 // Dung Timer1 de do do rong xung
+     while(!input(PIN_A6) && (i < 5000))
+       i = get_timer1();                            // Doc Timer1 va luu gia tri trong i
+     if(i > 4950)      //Thoi gian cho`, vuot qua 990us khong do tiep wait_sensor ve 0
+       return 0;
+     else
+       return 1;
+   }
+
+
+void Trigger_Pulse()
+{
+    output_high(trigger);
+    delay_us(10);
+    output_low(trigger);
+}
+
+int16 get_distance()    //nhan vao khoang cach tra ve va do do rong tu echo
+   {
+     i = 0;
+     set_timer1(0);
+     while(input(echo) && (i < 25000))
+       i = get_timer1();
+     return i;
+     delay_ms(5000);
+   }
+
+void main()          //Chuong trinh chinh
+{
+    set_tris_c(0x00);
+    output_c(0);
+    output_low(trigger);  
+    setup_timer_1(T1_Internal | T1_Div_by_1);   
+    set_timer1(0);         /* Load Timer1 with 0 */
+    
+While(true)
+   {
+   Trigger_Pulse();
+   
+if(wait_sensor())
+   {
+   distance = get_distance();
+   
+   if(distance < 1450) // Khoang cach toi da 5cm (290*5)
+        {
+            output_high(pin_c0);
+        }
+    else if(distance > 1450)
+        {
+           output_low(pin_c0);}
+        }
+     delay_ms(100);   
+   }}

@@ -1,0 +1,57 @@
+#include <16f887.h> 
+//#define motor_en pin_c7
+#fuses NOMCLR, NOBROWNOUT, NOLVP
+#use delay(clock = 8MHz)
+
+signed int16 i, distance,time;
+
+int1 wait_sensor()   //Cho` tin hieu tu cam bien
+   {
+     i = 0;
+     set_timer1(0);                                 // Dung Timer1 de do do rong xung
+     while(!input(PIN_A6) && (i < 1000))
+       i = get_timer1();                            // Doc Timer1 va luu gia tri trong i
+     if(i > 990)      //Thoi gian cho`, vuot qua 990us khong do tiep wait_sensor ve 0
+       return 0;
+     else
+       return 1;
+   }
+int16 get_distance()    //nhan vao khoang cach tra ve va do do rong tu echo
+   {
+     i = 0;
+     set_timer1(0);
+     while(input(PIN_A6) && (i < 25000))
+       i = get_timer1();
+     return i;
+     delay_ms(5000);
+   }
+   
+
+void main()
+{
+   setup_oscillator(OSC_8MHZ);                    // Dat dao dong trong thanh 8Mhz
+   output_c(0);
+   set_tris_a(1);                              
+   delay_ms(100);
+   SETUP_TIMER_1(T1_INTERNAL | T1_DIV_BY_2);      // Dinh cau hinh Timer1 de tang thêm 1 moi 1 us
+   while(TRUE)
+  {
+       // Gui xung 10us den chân Trig HC-SR04
+       output_high(PIN_A7);
+       delay_us(10);
+       output_low(PIN_A7);
+       
+       if(wait_sensor())  
+       {
+            distance = get_distance(); 
+            if(distance < 290){   
+                 output_high(pin_c0);   
+                 }
+            else if(distance > 290)
+               {
+                 output_low(pin_c0);}
+       }
+     delay_ms(100);
+  }
+}
+

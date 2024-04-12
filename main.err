@@ -1,0 +1,11 @@
+Compiling C:\Users\Fee\OneDrive\Máy tính\VXL\main on 13-Jun-22 at 18:15
+>>> Warning 225 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 2(17,24): Duplicate #define
+>>> Warning 225 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 3(13,20): Duplicate #define
+>>> Warning 225 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 4(16,23): Duplicate #define
+>>> Warning 244 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 37(1,1): Function Param:   8-bit value passed to function, only 8 MSB of duty will be set
+>>> Warning 244 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 37(1,1): Function Param:   8-bit value passed to function, only 8 MSB of duty will be set
+>>> Warning 244 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 49(1,1): Function Param:   8-bit value passed to function, only 8 MSB of duty will be set
+>>> Warning 244 "C:\Users\Fee\OneDrive\Máy tính\VXL\ultra-pwm.c" Line 56(1,1): Function Param:   8-bit value passed to function, only 8 MSB of duty will be set
+      Memory usage:   ROM=18%      RAM=6% - 9%
+      0 Errors,  7 Warnings.
+Build Successful.

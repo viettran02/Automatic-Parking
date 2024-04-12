@@ -1,0 +1,53 @@
+
+ROM used:   535/8192 (7%)
+            535/8192 (7%) including unused fragments
+
+            0.6 Average locations per line
+            24.3 Average locations per statement
+
+RAM used:   18/368 (5%) at main() level
+            32/368 (9%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   47    22 100  ultra-test.c
+  809     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h
+----- -----
+  856    22 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     16   3    0     48  1.1  trigger_pulse
+0    415  78    0    204  3.8  get_distance
+ Inline         2    354  4.7  @ITOF
+ Inline        13     98  2.1  @MULFF
+ Inline        14    123  2.9  @DIVFF
+0     67  13    0    202  4.0  MAIN
+0     33   6    4    158  3.5  @SFTOI
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               7
+    Statements              22
+    Comments                140
+    Volume (V)              1868
+    Difficulty (D)          22.0
+    Effort to implement (E) 41065
+    Time to implement (T)   38 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   9
+    Maintainability (MI)    153
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   531  1513  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

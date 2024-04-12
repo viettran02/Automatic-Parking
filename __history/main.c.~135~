@@ -1,0 +1,14 @@
+#include <Danduong.c>
+#include <Ultrasonic.c>
+void main()
+{
+   While(true)
+   {  
+         OUTPUT_C(0x01); output_b(0x00); 
+         lcd_setup();
+         danduong();    
+         //check_xe();
+   }
+ }  
+ 
+ 

@@ -1,0 +1,25 @@
+#INCLUDE <16F887.H>
+#FUSES HS
+#USE DELAY(CLOCK=20M)
+#define echo PIN_A6
+#define trig PIN_A7
+float kc, time;
+int16 xung, ketqua;
+void trigger()
+{
+   output_high(trig);
+   delay_us(10);
+   output_low(trig);
+}
+
+void echo()
+{
+   set_timer1(0);
+   while(!(input(echo))); //cho echo bat dau nhan tin hieu
+   setup_timer_1(t1_internal|t1_div_by_4); //Fxung = Fosc/4 = 5MHz -> Txung = 1/5 = 0.2us 
+                                                                  // Truoc khi vao timer Txung = 0.2*4 = 0.8us
+   while(input(echo));  
+   xung = get_timer1();
+   setup_timer_1(t1_disabled); //khi echo nhan het tin hieu
+   time = (xung*0.8) ;                                                      
+}

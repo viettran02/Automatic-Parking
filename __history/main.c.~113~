@@ -1,0 +1,54 @@
+#INCLUDE <16F887.H>
+#DEVICE ADC=10
+#FUSES NOWDT, PUT, HS, NOPROTECT, NOLVP
+#USE DELAY(CLOCK=20M)
+#include <Danduong.c>
+#include <Ultrasonic.c>
+UNSIGNED INT16 KQADC=0;
+#int_ad
+void interrupt_adc()
+{
+   break;
+}
+void main()
+{
+SET_TRIS_C(0x00); SET_TRIS_A(0xFF);
+SETUP_ADC(ADC_CLOCK_DIV_32);
+SETUP_ADC_PORTS(SAN4);
+
+enable_interrupts(global); enable_interrupts(int_ad);
+
+//!   setup_timer_1(t1_disabled);
+   While(true)
+   {  
+         output_c(0x00);
+         SET_ADC_CHANNEL(4); delay_ms(10);
+         KQADC=READ_ADC();
+         DELAY_MS(10);
+         KQADC= KQADC /2.046;
+         delay_ms(100);
+ 
+         If(KQADC >= 50)
+            {
+            OUTPUT_C(0x01); DELAY_MS(200);
+            OUTPUT_C(0x00); 
+            lcd_setup();    lcd_command(0x80);  delay_us(10);
+                            lcd_data("!CanhBao!");       
+            }
+         else
+         { OUTPUT_C(0x01); output_b(0x00); 
+           lcd_setup();
+           danduong();
+           }
+           
+//!      trigger();
+//!      tg_echo();
+//!      if(xung<1088)   //CO XE VAO CONG
+//!                     //thoi gian = khong cach * 58 (datasheet)
+//!      
+//kc < 15 <=> thoi gian < 870us <=> xung < 1088
+
+   }
+ }  
+ 
+ 

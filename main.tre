@@ -1,0 +1,174 @@
+ÀÄmain
+   ÀÄMAIN  0/185  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
+      ÃÄLCD_SETUP  0/33  Ram=0
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÀÄLCD_COMMAND  0/24  Ram=1
+      ³     ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@ITOF  0/29  Ram=2
+      ³  ÃÄ@DIVFF  0/202  Ram=14
+      ³  ÃÄ@SFTOI  (Inline)  Ram=4
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³  ³  ÃÄLCD_DATA  0/24  Ram=1
+      ³  ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ³  ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ³  ³  ÀÄLCD_DATA  0/24  Ram=1
+      ³  ³     ÀÄ*
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ÀÄ*
+      ÃÄfree  0/4  Ram=0
+      ³  ÀÄslot1  0/59  Ram=1
+      ³     ÃÄLCD_COMMAND  0/24  Ram=1
+      ³     ³  ÀÄ*
+      ³     ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ³  ÀÄ*
+      ³     ÃÄLCD_COMMAND  0/24  Ram=1
+      ³     ³  ÀÄ*
+      ³     ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ³  ÀÄ*
+      ³     ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄultra  0/338  Ram=0
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄget_distance  (Inline)  Ram=0
+      ³  ³  ÃÄ@ITOF  0/29  Ram=2
+      ³  ³  ÃÄ@MULFF  (Inline)  Ram=13
+      ³  ³  ÀÄ@DIVFF  0/202  Ram=14
+      ³  ÃÄ@FLT  0/63  Ram=10
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@FLT  0/63  Ram=10
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄslot2  0/52  Ram=0
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³  ³  ÀÄ*
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot3  0/48  Ram=0
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³  ³  ÀÄ*
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot4  0/46  Ram=0
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³  ³  ÀÄ*
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot2  0/52  Ram=0
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄfull  0/37  Ram=0
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@PSTRINGC7_709  0/86  Ram=4
+      ³  ³  ÀÄ*
+      ³  ÃÄLCD_COMMAND  0/24  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@PSTRINGC7_709  0/86  Ram=4
+      ³     ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot2  0/52  Ram=0
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot3  0/48  Ram=0
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot2  0/52  Ram=0
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÃÄultra  0/338  Ram=0
+      ³  ÀÄ*
+      ÃÄslot1  0/59  Ram=1
+      ³  ÀÄ*
+      ÃÄchecknhietdo  0/173  Ram=0
+      ³  ÀÄ*
+      ÀÄultra  0/338  Ram=0
+         ÀÄ*
